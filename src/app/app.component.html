@@ -1,4 +1,36 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div>
+  <p>Bilangan :</p>
+  <input [(ngModel)] = "angka1" type="text" id="bilangan1">
+</div>
+
+<div>
+  <p>Pangkat :</p>
+  <input [(ngModel)] = "angka2" type="text" id="bilangan2">
+</div>
+
+<br>
+
+<button (click) ="show()"> Show </button>
+
+<div *ngIf="isDone">
+  <p>Hasil : </p>
+
+  <div *ngIf="isGenap">
+    <p>Pola Genap</p>
+    <div *ngFor="let i of data">
+      <span *ngFor="let j of i">
+        {{j}}
+      </span>
+    </div>
+  </div>
+
+  <div *ngIf="!isGenap">
+    <p>Pola Ganjil</p>
+     <div *ngFor="let i of data">
+      <span *ngFor="let j of i">
+        {{j}}
+      </span>
+    </div>
+  </div>
+  
+</div>
